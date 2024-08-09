@@ -37,7 +37,7 @@ module.exports = {
         poppins: ["var(--font-poppins)", "sans-serif"],
       },
       backgroundImage: {
-        hero: "url(/hero.png)",
+        hero: "url(/hero/bg.png)",
         menu: "url(/menu/bg.png)",
         reservation: "url(/reservstion/bg.png)",
         footer: "url(/footer/bg.png)",

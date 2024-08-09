@@ -17,6 +17,16 @@ import Link from 'next/link'
 import { Label } from './ui/label'
 import { Input } from './ui/input'
 
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+
 const StyleGuide = () => {
     const [date, setDate] = React.useState()
 
@@ -54,10 +64,7 @@ const StyleGuide = () => {
                         <PopoverTrigger asChild>
                             <Button
                                 variant={"input"}
-                                className={cn(
-                                    "w-full justify-start text-left font-normal",
-                                    !date && "text-muted-foreground"
-                                )}
+                                className={cn("w-full justify-start text-left font-normal")}
                             >
                                 <CalendarIcon className="mr-2 h-4 w-4" />
                                 {date ? format(date, "PPP") : <span>Pick a date</span>}
@@ -73,6 +80,22 @@ const StyleGuide = () => {
                         </PopoverContent>
                     </Popover>
                 </div>
+                {/* select */}
+                <Select>
+                    <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select a fruit" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectGroup>
+                            <SelectLabel>Fruits</SelectLabel>
+                            <SelectItem value="apple">Apple</SelectItem>
+                            <SelectItem value="banana">Banana</SelectItem>
+                            <SelectItem value="blueberry">Blueberry</SelectItem>
+                            <SelectItem value="grapes">Grapes</SelectItem>
+                            <SelectItem value="pineapple">Pineapple</SelectItem>
+                        </SelectGroup>
+                    </SelectContent>
+                </Select>
             </div>
         </>
     )
